@@ -68,6 +68,29 @@ $('body').on('click', 'li[data-logout="true"]', function() {
     }
        }
 });
+$('body').on('click', '.forgot', function() {
+   $('body').find('.login-box').addClass('hidden');
+   $('body').find('.forgot-box').removeClass('hidden');
+   
+});
+$('body').on('click', '.reset_password', function() {
+   var emailId=$('.email-p').val(); 
+   $.ajax({
+             url: base_url + 'index.php/Login/forgot',
+             type: "POST",
+             async: false,
+             dataType: "json",
+             data: {useremail:emailId},
+             success: function(response){
+                console.log(response.Message);
+                if(response.Message=="Success"){
+                  
+                   
+                 }
+             }
+         });
+    
+})
  }
 return{
     init:function(){

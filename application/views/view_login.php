@@ -46,7 +46,7 @@
                             <div class="login-box">
                                 <a href="index.html" class="logo-name text-lg text-center">Services</a>
                                 <p class="text-center m-t-md">Please login into your account.</p>
-                                <form class="m-t-md">
+                                <form class="m-t-md login-form">
                                     <div class="form-group">
                                         <input type="email" class="form-control username" name="usename" placeholder="Username" required>
                                     </div>
@@ -54,12 +54,37 @@
                                         <input type="password" class="form-control password" name="passsword" placeholder="Password" required>
                                     </div>
                                     <button type="button" class="btn btn-success btn-block login">Login</button>
-                                    <a href="forgot.html" class="display-block text-center m-t-md text-sm">Forgot Password?</a>
+<!--                                    <a class="btn btn-block btn-social btn-twitter" href="<?php echo base_url();?>hauth/login/Twitter"><span class="fa fa-twitter"> </span> Log in with Twitter</a><br />
+                                    <a class="btn btn-block btn-social btn btn-facebook" href="<?php echo base_url();?>hauth/login/Facebook"><span class="fa fa-facebook"> </span> Log in with Facebook</a><br />
+                                    <a class="btn btn-block btn-social btn btn-google" href="<?php echo base_url();?>hauth/login/Google"><span class="fa fa-google"> </span> Log in with Google</a>-->
+                                    <?php
+                                    $this->load->helper('url');
+                                    ?><a class="btn btn-block btn-social btn-twitter" href="<?php echo base_url();?>index.php/hauth/login/Twitter"><span class="fa fa-twitter"> </span> Log in with Twitter</a><br />
+
+                                    <a class="btn btn-block btn-social btn-facebook" href="<?php echo base_url();?>index.php/hauth/login/Facebook"><span class="fa fa-facebook"> </span> Log in with Facebook</a><br />
+
+                                    <a class="btn btn-block btn-social btn-google" href="<?php echo base_url();?>index.php/hauth/login/Google"><span class="fa fa-google"> </span>  Log in with Google</a><br />
+
+                                  
+                                    <a  class="display-block text-center m-t-md text-sm forgot">Forgot Password?</a>
                                     <p class="text-center m-t-xs text-sm">Do not have an account?</p>
                                     <a href="register.html" class="btn btn-default btn-block m-t-md ">Create an account</a>
 
                                 </form>
-                                <p class="text-center m-t-xs text-sm">2015 &copy; Modern by Steelcoders.</p>
+                                <p class="text-center m-t-xs text-sm">2017 &copy; Services by FSHDesign.</p>
+                            </div>
+                            <div class="m-t-md forgot-box hidden">
+                                <a href="index.html" class="logo-name text-lg text-center">Services</a>
+                                <p class="text-center m-t-md">Please enter your email id to reset password.</p> 
+                                <div class="forgot-form">
+                                    <form class="m-t-md">
+                                        <legend>Reset password</legend>
+                                        <div class="form-group">
+                                            <input type="email" class="form-control email-p" name="email" placeholder="Email" required>
+                                        </div>
+                                        <button type="button" class="btn btn-success btn-block reset_password">Reset</button>
+                                    </form>
+                                </div>
                             </div>
                         </div>
                     </div><!-- Row -->
@@ -68,7 +93,6 @@
         </main><!-- Page Content -->
 	
         
-
        
     </body>
     <script src="<?php echo base_url();?>assets/plugins/jquery/jquery-2.1.3.min.js"></script>

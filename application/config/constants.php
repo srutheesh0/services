@@ -83,3 +83,17 @@ defined('EXIT_USER_INPUT')     OR define('EXIT_USER_INPUT', 7); // invalid user 
 defined('EXIT_DATABASE')       OR define('EXIT_DATABASE', 8); // database error
 defined('EXIT__AUTO_MIN')      OR define('EXIT__AUTO_MIN', 9); // lowest automatically-assigned error code
 defined('EXIT__AUTO_MAX')      OR define('EXIT__AUTO_MAX', 125); // highest automatically-assigned error code
+
+
+//email configuration
+
+define("MAIL_FROM","gaustinv88@gmail.com");
+define("MAIL_TO","srutheesh0@gmail.com");
+define("MAIL_FROM_NAME","Services" );
+define("MAIL_PROTOCOL","smtp");
+define("MAIL_SMTP_HOST","smtp.gmail.com");
+define("MAIL_SMTP_PORT","465");
+define("MAIL_SMTP_USER","gaustinv88@gmail.com");
+define("MAil_SMTP_PASS","austinsbisbtsbhgeorge");
+define("MAIL_SMTP","html");
+define("MAIL_CHARSET","iso-885");

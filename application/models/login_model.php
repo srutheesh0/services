@@ -64,7 +64,22 @@ Class Login_Model extends CI_Model {
             return false;
         }
     }
-
+public function checkmail($data){
+    $res=0;
+        $condition = "emailId =" . "'" . $data . "'";
+        $this->db->select('emailId');
+        $this->db->from('registration_tab');
+        $this->db->where($condition);
+        $this->db->limit(1);
+        $query = $this->db->get();
+       
+        if ($query->num_rows() == 1) {
+             $res=$query->result_array();
+             return $res;
+        } else {
+            return $res;
+        }
+}
 }
 
 ?>
