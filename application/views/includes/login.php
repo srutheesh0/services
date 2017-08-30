@@ -43,7 +43,7 @@
                     <div class="row">
                         <div class="col-md-3 center">
                             <div class="login-box">
-                                <a href="index.html" class="logo-name text-lg text-center">Modern</a>
+                                <a href="index.html" class="logo-name text-lg text-center">services</a>
                                 <p class="text-center m-t-md">Please login into your account.</p>
                                 <form class="m-t-md" action="index.html">
                                     <div class="form-group">

@@ -11,7 +11,9 @@ class Login extends CI_Controller {
         $this->load->helper('url');
 
 // Load form validation library
+
         $this->load->library('form_validation');
+        
 
 // Load session library
         $this->load->library('session');
@@ -26,6 +28,7 @@ class Login extends CI_Controller {
 
     // Check for user login process
     public function user_login_process() {
+        $message='fail';
         // print_r($_POST);die();
         $this->form_validation->set_rules('username', 'Username', 'trim|required|xss_clean');
         $this->form_validation->set_rules('password', 'Password', 'trim|required|xss_clean');
@@ -34,11 +37,13 @@ class Login extends CI_Controller {
         $data = array(
             'username' => $this->input->post('username'),
             'password' => $this->input->post('password')
+
         );
 
         $result = $this->login_model->login($data);
-        // print_r($result);die();
-        if ($result == TRUE) {
+        //print_r($result);die();
+        if ($result != 0) {
+            $message='Success';
             $session_data = array(
                 'username' => $result[0]->username,
                 'email' => $result[0]->emailId,
@@ -46,14 +51,15 @@ class Login extends CI_Controller {
             );
 // Add user data in session
             $this->session->set_userdata('logged_in', $session_data);
-            // print_r($session_data);
+            //print_r($message);
+            //die();
 
             echo json_encode(array('Message' => 'Success', 'session_data' => $session_data));
         } else {
             $data = array(
                 'error_message' => 'Invalid Username or Password'
             );
-            $this->load->view('view_login', $data);
+           echo json_encode(array('Message' => 'Failed'));
         }
     }
 

@@ -49,10 +49,13 @@
                                 <form class="m-t-md login-form">
                                     <div class="form-group">
                                         <input type="email" class="form-control username" name="usename" placeholder="Username" required>
+                                        <div class="erroruser"></div>
                                     </div>
                                     <div class="form-group">
                                         <input type="password" class="form-control password" name="passsword" placeholder="Password" required>
+                                        <div class="errorpass"></div>
                                     </div>
+                                    <div class="errormessage"> </div>
                                     <button type="button" class="btn btn-success btn-block login">Login</button>
 <!--                                    <a class="btn btn-block btn-social btn-twitter" href="<?php echo base_url();?>hauth/login/Twitter"><span class="fa fa-twitter"> </span> Log in with Twitter</a><br />
                                     <a class="btn btn-block btn-social btn btn-facebook" href="<?php echo base_url();?>hauth/login/Facebook"><span class="fa fa-facebook"> </span> Log in with Facebook</a><br />
@@ -80,9 +83,10 @@
                                     <form class="m-t-md">
                                         <legend>Reset password</legend>
                                         <div class="form-group">
-                                            <input type="email" class="form-control email-p" name="email" placeholder="Email" required>
+                                            <input type="email" class="form-control email-p" name="email" placeholder="Enter your EmailId" required>
                                         </div>
                                         <button type="button" class="btn btn-success btn-block reset_password">Reset</button>
+                                        <div class="errorreset"></div>
                                     </form>
                                 </div>
                             </div>

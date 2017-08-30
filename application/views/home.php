@@ -90,6 +90,7 @@
                         </div>
                     </div><!-- Row -->
                     <div class="row">
+                     <!-- <div class="row">
                         <div class="col-lg-9 col-md-12">
                             <div class="panel panel-white">
                                 <div class="row">
@@ -152,7 +153,9 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-lg-5 col-md-6">
+                        </div> -->
+                         <div class="row">
+                        <!-- <div class="col-lg-5 col-md-6">
                             <div class="panel panel-white">
                                 <div class="panel-heading">
                                     <h4 class="panel-title">Weather</h4>
@@ -202,7 +205,7 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        </div> -->
                         <div class="col-lg-4 col-md-6">
                             <div class="panel panel-white">
                                 <div class="panel-heading">
@@ -287,6 +290,8 @@
                                 </div>
                             </div>
                         </div>
+                        </div>
+                         <div class="row">
                         <div class="col-lg-12 col-md-12">
                             <div class="panel panel-white">
                                 <div class="panel-heading">
@@ -382,6 +387,7 @@
                                     </div>
                                 </div>
                             </div>
+                        </div>
                         </div>
                     </div>
                 </div><!-- Main Wrapper -->

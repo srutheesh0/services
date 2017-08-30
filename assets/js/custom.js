@@ -11,13 +11,21 @@ $('body').on('click', '.login', function() {
        var password= $('.password').val();
        if(username==''){
            err['username']=true;  
+           $( ".username" ).addClass( "errorinput" );
+           $('.erroruser').text("please enter your username");
+           $('.erroruser').show();   
        }else{
-           err['username']=false;   
+           err['username']=false;  
+           $('.erroruser').hide();   
        }
        if(password==''){
-           err['password']=true;  
+           err['password']=true; 
+            $( ".password" ).addClass( "errorinput" );
+             $('.errorpass').text("please enter your password");
+             $('.errorpass').show();   
        }else{
-           err['password']=false;   
+           err['password']=false; 
+            $('.errorpass').hide();  
        }
        
        if((err['username']==false)&&(err['password'] == false)){
@@ -33,6 +41,11 @@ $('body').on('click', '.login', function() {
                 if(response.Message=="Success"){
                    
                     window.location= base_url + 'index.php/Login/admin_home';
+                 }
+                  else
+                 {
+            
+                  $('.errormessage').text("Invalid username and password");
                  }
              }
          });
@@ -57,11 +70,12 @@ $('body').on('click', 'li[data-logout="true"]', function() {
              dataType: "json",
              data: {logout_err:logout_err,test:test},
              success: function(response){
-                console.log(response.Message);
+                //console.log(response.Message);
                 if(response.Message=="Success"){
                   
                     window.location= base_url + 'index.php/Login';
                  }
+                
              }
          });
     
@@ -73,8 +87,34 @@ $('body').on('click', '.forgot', function() {
    $('body').find('.forgot-box').removeClass('hidden');
    
 });
+//alert("a");
 $('body').on('click', '.reset_password', function() {
+  //alert("b");
    var emailId=$('.email-p').val(); 
+    var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;  
+   if(emailId=='' ){
+
+           err['email-p']=true;  
+           $( ".email-p" ).addClass( "errorinput" );
+           $('.errorreset').text("please enter your emailId");
+           $('.errorreset').show();   
+       }else if(!mailformat.test(emailId))
+       {
+         err['email-p']=true;  
+         //  $( ".email-p" ).addClass( "errorinput" );
+           $('.errorreset').text("please enter a valid emailId");
+           $('.errorreset').show();   
+          
+           }  
+           else
+           {
+       
+ err['email-p']=false;  
+           $('.errorreset').hide();
+
+
+//if(inputText.value.match(mailformat))
+       
    $.ajax({
              url: base_url + 'index.php/Login/forgot',
              type: "POST",
@@ -84,14 +124,20 @@ $('body').on('click', '.reset_password', function() {
              success: function(response){
                 console.log(response.Message);
                 if(response.Message=="Success"){
-                  
+                  window.location= base_url + 'index.php/Login';
                    
+                 }
+                 else
+                 {
+            
+                  $('.errorreset').text("Invalid emailId");
                  }
              }
          });
-    
-})
  }
+    
+});
+}
 return{
     init:function(){
         

@@ -33,18 +33,20 @@ Class Login_Model extends CI_Model {
 // Read data using username and password
     public function login($data) {
         //print_r($data);die();
-        $condition = "username =" . "'" . $data['username'] . "' AND " . "password =" . "'" . $data['password'] . "'";
+        //print_r(MD5($data['password']));
+        $condition = "username =" . "'" . $data['username'] . "' AND " . "password =" . "'" . MD5($data['password']) . "'";
+
         $this->db->select('*');
         $this->db->from('registration_tab');
         $this->db->where($condition);
         $this->db->limit(1);
         $query = $this->db->get();
-//echo $this->db->last_query();
+//echo $this->db->last_query(); die();
         if ($query->num_rows() == 1) {
             return $query->result();
         } else {
 
-            return false;
+            return 0;
         }
     }
 

@@ -14,10 +14,10 @@ $( document ).ready(function() {
             hideMethod: 'fadeOut',
             timeOut: 5000
         };
-        toastr.success('Checkout settings menu on left!', 'Welcome to Modern!');
+        toastr.success('Checkout settings menu on left!', 'Welcome to services!');
     }, 1800);
     
-    var flot2 = function () {
+    /*var flot2 = function () {
 
 		// We use an inline data source in the example, usually data would
 		// be fetched from a server
@@ -188,4 +188,4 @@ $( document ).ready(function() {
     
     $(".live-tile").liveTile();
     
-});
+});*/
